@@ -126,30 +126,12 @@ textarea {
     margin-right: auto
 }
 
-.brand-mark {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 11px;
-    background: var(--blue);
-    color: #fff;
-    font: 800 25px var(--font-display)
-}
-
-.brand strong {
+.brand-logo {
     display: block;
-    letter-spacing: .12em;
-    font: 800 16px var(--font-display)
-}
-
-.brand small {
-    display: block;
-    margin-top: 2px;
-    color: #6e7d8c;
-    font-size: 9px;
-    letter-spacing: .1em;
-    text-transform: uppercase
+    width: 280px;
+    height: auto;
+    aspect-ratio: 4.1 / 1;
+    object-fit: cover;
 }
 
 nav {
@@ -1122,4 +1104,33 @@ footer>small {
         right: 14px;
         bottom: 14px
     }
+}
+/* Official Confidem identity, prepared from the supplied logo. */
+.site-header {
+    background: var(--navy);
+    border-bottom-color: #ffffff28;
+}
+.site-header nav { color: #e0edf7; }
+.site-header nav a:hover { color: #72c5ff; }
+.header-cta { background: var(--blue); }
+.menu-button { border: 1px solid #72c5ff66; }
+.brand-feature img { aspect-ratio: 1799 / 874; object-fit: contain; }
+.footer-brand { max-width: 100%; }
+footer {
+    background: var(--navy2);
+    isolation: isolate;
+}
+.footer-brand .brand-logo {
+    mix-blend-mode: lighten;
+}
+@media (max-width: 1000px) {
+    .site-header nav.open { top: 88px; color: var(--ink); }
+}
+@media (max-width: 600px) {
+    .site-header { gap: 12px; padding-inline: 16px; }
+    .site-header .brand { min-width: 0; }
+    .brand-logo { width: min(280px, 100%); }
+    .site-header .brand-logo { width: min(240px, 100%); }
+    .menu-button { flex-shrink: 0; }
+    .site-header nav.open { top: 74px; }
 }
